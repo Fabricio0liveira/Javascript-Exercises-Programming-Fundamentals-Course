@@ -92,4 +92,41 @@ function inverse(booleanOrNumber) {
     }
 }
 
-inverse('false');
+// inverse(2000);
+
+// 7° Exercício 
+function itsBetween(number, min, max) {
+    if(number >= min && number <= max) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// console.log(itsBetween(8, 1, 80));
+
+// 8° Exercício
+function multiply(number1, number2) {
+    let result = number1;
+    if(number1 >= 0 && number2 >= 0) {
+        for(let i = 1; i < number2; i++) {
+            result += number1;
+        }
+        console.log(result);
+    } else {
+        console.log('Valor digitado, negativo ou inválido!')
+    }   
+}
+
+// multiply(5, 5);
+
+// 9° Exercício
+const repeat = function(value, numberOfRepetitions) {
+    let repeatedValue = [];
+    for(let i = 1; i <= numberOfRepetitions; i++) {
+        repeatedValue.push(value);
+    }
+    return repeatedValue;
+}
+
+console.log(repeat('código', 2));

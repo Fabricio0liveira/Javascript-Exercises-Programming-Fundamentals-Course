@@ -41,3 +41,23 @@ tipo ...".
     * inverso("6") // retornará "booleano ou número esperados, mas o parâmetro é do tipo string"
     * inverso(-2000) // retornará 2000
     * inverso("programação") // retornará "booleano ou números esperado, mas o parâmetro é do tipo string"
+
+7. Crie uma função que receba três números como parâmetro (numero, minimo, maximo) e retorne true se
+o parâmetro numero (o primeiro) está entre minimo e maximo.
+* Exemplos:
+    * estaEntre(10, 50, 100) // retornará false
+    * estaEntre(16, 10, 160) // retornará true
+    * estaEntre(3, 30, 150) // retornará false
+    * estaEntre(8, 1, 80) // retornará true
+
+8. Desenvolva uma função que recebe dois números inteiros não negativos (maiores ou iguais a zero) e realize a
+multiplicação deles. Porém, não utilize o operador de mutiplicação.
+    * Exemplo:
+        * multiplicar(5, 5) // retornará 25
+        * multiplicar(0, 7) // retornará 0
+
+9. Escreva uma função que receba dois parâmetros. O primeiro parâmetro é o elemento que repetirá, enquanto
+que o segundo será o número de vezes que haverá repetição. Um array será retornado.
+    * Exemplos:
+        * repetir("código", 2) // retornará ["código", "código"]
+        * repetir(7, 3) // retornará [7, 7, 7]
