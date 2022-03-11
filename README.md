@@ -61,3 +61,65 @@ que o segundo será o número de vezes que haverá repetição. Um array será r
     * Exemplos:
         * repetir("código", 2) // retornará ["código", "código"]
         * repetir(7, 3) // retornará [7, 7, 7]
+
+10. Elabore uma função que recebe um número como parâmetro e retorne uma string com o símbolo "+" na
+quantidade especificada no parâmetro.
+    * Exemplos:
+        * simboloMais(2) // retornará "++"
+        * simboloMais(4) // retornará "++++"
+
+11. Crie uma função que receba uma array e retorne o primeiro e o último elemento desse array como um novo
+array:
+* Exemplos:
+    * receberPrimeiroEUltimoElemento([7,14,"olá"]) // retornará [7, "olá"]
+    * receberPrimeiroEUltimoElemento([-100, "aplicativo", 16]) // retornará [-100, 16]
+
+12. Quando temos um objeto e manipulamos seus atributos, adicionando, atualizando ou removendo-os, estamos
+apenas modificando-o, mas, em essência, o objeto continua o mesmo, ou seja a sua referência de memória é a
+mesma.
+Num projeto que você está trabalhando, você foi designado a refatorar diversas funções para que façam
+cópias de objetos e manipulem os dados dessas cópias, com o intuito de evitar efeitos indesejáveis em
+algumas situações devido a referências a objetos. Abaixo, está a descrição de uma dessas funções.
+Você escreverá uma função que recebe um objeto como primeiro parâmetro e, como segundo parâmetro, o
+nome de uma propriedade contida nesse objeto. Em seguida, retorne uma cópia desse objeto sem a
+propriedade especificada no segundo parâmetro.
+Exercícios - Curso Fundamentos de Programação 3
+* Exemplos:
+    * removerPropriedade({a: 1, b: 2}, "a") // retornará {b: 2}
+removerPropriedade({
+id: 20,
+nome: "caneta",
+descricao: "Não preenchido"
+}, "descricao") // retornará {id: 20, nome: "caneta"}
+
+💡 A fim de testar se o objeto retornado não é o mesmo que foi passado como parâmetro para a função
+removerPropriedade, você poderá usar a função Object.is(), por exemplo:
+Object.is(removerPropriedade(objeto, "descricao"), objeto)
+Retornará false se o objeto não for o mesmo.
+
+13. Crie uma função que receba um array de elementos e retorne um array somente com os números presentes no
+array recebido como parâmetro.
+    * Exemplos:
+        * filtrarNumeros(["Javascript", 1, "3", "Web", 20]) //retornará [1, 20]
+        * filtrarNumeros(["a", "c"]) // retornará []
+
+14. Desenvolva uma função que recebe como parâmetro um objeto e retorne um array de arrays, em que cada
+elemento é um array formado pelos pares chave/valor que corresponde a um atributo do objeto. Observe os
+exemplos abaixo para um melhor entendimento:
+    * Exemplos:
+        * objetoParaArray({
+        nome: "Maria",
+        profissao: "Desenvolvedora de software"
+        }) // irá retornar [["nome", "Maria"], ["profissao", "Desenvolvedora de Software"]]
+        * objetoParaArray({
+        codigo: 11111,
+        preco: 12000
+        }) // irá retornar [["codigo", 11111], ["preco", 12000]]
+
+15. Elabore uma função que receba um array de números e retorne um array que tenha todos os números que são
+pares e que também tenham índices pares.
+💡 Lembre-se que um número é par porque é divisível por 2, ou seja, o resto da divisão da divisão dele
+por 2 é zero.
+    * Exemplos:
+        * receberSomenteOsParesDeIndicesPares([1, 2, 3, 4]) // retornará []
+        * receberSomenteOsParesDeIndicesPares([10, 70, 22, 43]) // retornará [10, 22]
