@@ -234,14 +234,6 @@ const despesasTotais = (despesas) => {
 
     // return total;
 }
-// console.log(despesasTotais([
-//     {
-//         nome: "Galaxy S20", categoria: "Eletrônicos", preco: 3599.99
-//     },
-//     {
-//         nome: "Macbook Pro", categoria: "Eletrônicos", preco: 30999.90
-//     }
-// ]));
 // PENDENTE
 
 
@@ -319,8 +311,79 @@ const searchForSimilarWords = (word, array) => {
 // console.log(searchForSimilarWords('va', ["javascript", "java", "c++"]));
 
 
-// 25° Exercício
+// 26° Exercício
 const removeVowels = string => {
     return string.replace(/[aeiouà-ú]/gi,'');
 }
 // console.log(removeVowels('Fundamentos'));
+
+
+// 27° Exercício
+const reverse = object => {
+    let reverseObject = {}
+    for(let key in object) {
+        reverseObject[object[key]] = key
+    }
+    return reverseObject;
+}
+// console.log(reverse({a: 1, b: 2, c: 3}));
+
+
+// 28° Exercício
+const filtrarPorQuantidadeDeDigitos = (array, number) => {
+    let arrayFiltrado = [];
+    for(let i in array) {
+        if(String(array[i]).length === number) {
+            arrayFiltrado.push(array[i]);
+        }
+    }
+    return arrayFiltrado;
+}
+// console.log(filtrarPorQuantidadeDeDigitos([38, 2, 365, 10, 125, 11], 3));
+
+// 29° Exercício
+const secondLargest = array => {
+    let numbersInOrder = array.sort((a, b) => {
+        return a - b;
+    });
+    let secondLargest = numbersInOrder[numbersInOrder.length -2];
+
+    return secondLargest;
+}
+// console.log(secondLargest([8, 4, 5, 6]));
+
+// 30° Exerxício
+let estudantes = {
+    joao: [8, 5, 7, 8.5],
+    maria: [9, 4, 7, 6],
+    francisco: [8, 7.5, 10, 5],
+}
+
+const receberMelhorEstudadente = value => {
+    let melhorEstudante = {}
+    let arraysDeNotas = []
+    let media = 0;
+    let total = [];
+    
+    for(let key in value) {
+        arraysDeNotas.push(value[key]);
+    }
+    // console.log(arraysDeNotas)
+    const initialValue = 0;
+    for(let i = 0; i < arraysDeNotas.length; i++) {
+        const sumWithInitial = arraysDeNotas[i].reduce(
+            (acc, cur) => acc + cur,
+            initialValue
+        );
+
+        console.log(sumWithInitial);
+    }
+    
+}
+
+console.log(receberMelhorEstudadente(estudantes));
+// PENDENTE
+
+
+
+

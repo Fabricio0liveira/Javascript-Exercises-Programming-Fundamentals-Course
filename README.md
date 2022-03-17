@@ -108,13 +108,14 @@ elemento é um array formado pelos pares chave/valor que corresponde a um atribu
 exemplos abaixo para um melhor entendimento:
     * Exemplos:
         * objetoParaArray({
-        nome: "Maria",
-        profissao: "Desenvolvedora de software"
+            nome: "Maria",
+            profissao: "Desenvolvedora de software"
         }) // irá retornar [["nome", "Maria"], ["profissao", "Desenvolvedora de Software"]]
         * objetoParaArray({
-        codigo: 11111,
-        preco: 12000
-        }) // irá retornar [["codigo", 11111], ["preco", 12000]]
+            codigo: 11111,
+            preco: 12000
+            }) // irá retornar [["codigo", 11111], ["preco", 12000]]
+
 
 15. Elabore uma função que receba um array de números e retorne um array que tenha todos os números que são
 pares e que também tenham índices pares.
@@ -211,3 +212,31 @@ consoantes, ou seja, sem as vogais.
     * Exemplos:
         * removerVogais("Cod3r") // retornará "Cd3r"
         * removerVogais("Fundamentos") // retornará "Fndmnts"
+
+27. Desenvolva uma função que recebe um objeto como parâmetro e retorne um outro objeto que corresponde ao
+ao objeto recebido como parâmetro, porém com as posições das chaves e valores invertidas, conforme
+exemplo a seguir:
+    * Exemplo:
+        * inverter({ a: 1, b: 2, c: 3}) // retornará { 1: "a", 2: "b", 3: "c"}
+
+28. Elabore uma função que recebe dois parâmetros: o primeiro é um array de números e o segundo é um número
+que especifica uma quantidade de dígitos. Essa função deverá retornar somente aqueles números do array que
+têm a quantidade de dígitos indicada pelo segundo parâmetro.
+    * Exemplos:
+        * filtrarPorQuantidadeDeDigitos([38, 2, 365, 10, 125, 11], 2) // retornará [38, 10, 11]
+        * filtrarPorQuantidadeDeDigitos([5, 9, 1, 125, 11], 1) // retornará [5, 9, 1]
+
+29. Crie uma função que recebe um array de números e retorna o segundo maior número presente nesse array.
+    * Exemplos:
+        * segundoMaior([12, 16, 1, 5]) // retornará 12
+        * segundoMaior([8, 4, 5, 6]) // retornará 6
+
+30. Elabore uma função que recebe um objeto com estudantes e suas notas. As notas de cada estudante estarão
+num array, conforme exemplo abaixo. Você deverá calcular a média da nota de cada aluno e retornar um objeto
+com os atributos nome e media, que indica o aluno que teve o melhor desempenho nas notas.
+    * Exemplo:
+        * recerberMelhorEstudante({
+        Joao: [8, 7.6, 8.9, 6], // média 7.625
+        Mariana: [9, 6.6, 7.9, 8], // média 7.875
+        Carla: [7, 7, 8, 9] // média 7.75
+        }) // retornará { nome: "Mariana", media: 7.875 }
