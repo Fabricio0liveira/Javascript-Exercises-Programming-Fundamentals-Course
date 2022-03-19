@@ -198,14 +198,13 @@ const pairsOfEvenIndices = array => {
 
 // 16° Exercício
 const checarAnoBissexto = year => {
-    if(year % 4 === 0) {
+    if((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
         return true;
     } else {
         return 'false, pois é múltiplo de 100 e não é múltiplo de 400';
     }
 }
-// console.log(checarAnoBissexto(2004));
-// PENDENTE
+// console.log(checarAnoBissexto(112));
 
 
 // 17° Exercício
@@ -227,15 +226,17 @@ const addNumbers = array => {
 
 // 18° Exercício
 const despesasTotais = (despesas) => {
-    let total = 0;
-    let objeto = {...despesas};
-    let { preco } = objeto
-    return preco
+    let despesaTotal = 0
+    despesas.forEach(despesa => {
+        despesaTotal+= despesa.preco
+    }) 
 
-    // return total;
+    return despesaTotal;
 }
-// PENDENTE
-
+// console.log(despesasTotais([
+//     {nome: "Galaxy S20", categoria: "Eletrônicos", preco: 3599.99},
+//     {nome: "Macbook Pro", categoria: "Eletrônicos", preco: 30999.90}
+// ]))
 
 // 19° Exercício
 const calculateAverage = array => {
@@ -359,30 +360,24 @@ let estudantes = {
     francisco: [8, 7.5, 10, 5],
 }
 
-const receberMelhorEstudadente = value => {
-    let melhorEstudante = {}
-    let arraysDeNotas = []
-    let media = 0;
-    let total = [];
-    
-    for(let key in value) {
-        arraysDeNotas.push(value[key]);
+const receberMelhorEstudadente = estudantes => {
+    let maiorNota = 0
+    let melhorAluno
+    for(let chave in estudantes) {
+        let somaNotaAtual = 0
+        estudantes[chave].forEach(nota => {
+            somaNotaAtual+= nota
+        })
+        if(maiorNota < somaNotaAtual) {
+            maiorNota = somaNotaAtual / estudantes[chave].length
+            melhorAluno = chave
+        }
     }
-    // console.log(arraysDeNotas)
-    const initialValue = 0;
-    for(let i = 0; i < arraysDeNotas.length; i++) {
-        const sumWithInitial = arraysDeNotas[i].reduce(
-            (acc, cur) => acc + cur,
-            initialValue
-        );
 
-        console.log(sumWithInitial);
-    }
-    
+    return {nome: melhorAluno, media: maiorNota}
 }
 
-console.log(receberMelhorEstudadente(estudantes));
-// PENDENTE
+console.log(receberMelhorEstudadente(estudantes))
 
 
 
