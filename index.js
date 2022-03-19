@@ -69,12 +69,12 @@ function monthName(monthNumber) {
 // 5° Exercício
 function biggerOrEqual(number1, number2) {
     if(number1 > number2 || number1 === number2) {
-        console.log(true);
+        return true;
     } else {
-        console.log(false);
+        return false;
     }
 }
-// biggerOrEqual(0, '0');
+// console.log(biggerOrEqual(0, '0'));
 
 
 // 6° Exercício
@@ -113,7 +113,7 @@ function multiply(number1, number2) {
         }
         console.log(result);
     } else {
-        console.log('Valor digitado, negativo ou inválido!')
+        console.log('Valor digitado, negativo ou inválido!');
     }   
 }
 // multiply(5, 5);
@@ -209,16 +209,10 @@ const checarAnoBissexto = year => {
 
 // 17° Exercício
 const addNumbers = array => {
-    // let total = 0;
-    // for(let i = 0; i < array.length; i++) {
-    //     total+= array[i];
-    // }
-    // return total;
-
     const initialValue = 0;
     const totalSum = array.reduce((acc, cur) => 
         acc + cur, initialValue
-    )    
+    );
     return totalSum;
 }
 // console.log(addNumbers([10, 10, 10]));
@@ -226,9 +220,9 @@ const addNumbers = array => {
 
 // 18° Exercício
 const despesasTotais = (despesas) => {
-    let despesaTotal = 0
+    let despesaTotal = 0;
     despesas.forEach(despesa => {
-        despesaTotal+= despesa.preco
+        despesaTotal+= despesa.preco;
     }) 
 
     return despesaTotal;
@@ -237,6 +231,7 @@ const despesasTotais = (despesas) => {
 //     {nome: "Galaxy S20", categoria: "Eletrônicos", preco: 3599.99},
 //     {nome: "Macbook Pro", categoria: "Eletrônicos", preco: 30999.90}
 // ]))
+
 
 // 19° Exercício
 const calculateAverage = array => {
@@ -254,14 +249,14 @@ const calculateAverage = array => {
 // 20° Exercício
 const triangleArea = (base, height) => {
     let result = (base * height) / 2;
-    return result.toFixed(2)
+    return result.toFixed(2);
 } 
 // console.log(triangleArea(9.25, 13.1));
 
 
 // 21° Exercício
 const smallestNumber = array => {
-    let smaller = Math.min(...array)
+    let smaller = Math.min(...array);
     return smaller;
 }
 // console.log(smallestNumber([5, -15, 50, 3]));
@@ -281,7 +276,7 @@ const functionOfLuck = numberOneToTen => {
 
 // 23° Exercício
 const countWords = words => {
-    let arrayWords = words.split(" ")
+    let arrayWords = words.split(" ");
     return arrayWords.length;
 }
 // console.log(countWords('Me divirto aprendendo a programar'));
@@ -304,7 +299,7 @@ const countCharacter = (character, string) => {
 const searchForSimilarWords = (word, array) => {
     let foundWords = array.filter((words) => {
         if(words.indexOf(word) !== -1) {
-            return words
+            return words;
         }
     });
     return foundWords;
@@ -321,9 +316,9 @@ const removeVowels = string => {
 
 // 27° Exercício
 const reverse = object => {
-    let reverseObject = {}
+    let reverseObject = {};
     for(let key in object) {
-        reverseObject[object[key]] = key
+        reverseObject[object[key]] = key;
     }
     return reverseObject;
 }
@@ -342,6 +337,7 @@ const filtrarPorQuantidadeDeDigitos = (array, number) => {
 }
 // console.log(filtrarPorQuantidadeDeDigitos([38, 2, 365, 10, 125, 11], 3));
 
+
 // 29° Exercício
 const secondLargest = array => {
     let numbersInOrder = array.sort((a, b) => {
@@ -353,31 +349,35 @@ const secondLargest = array => {
 }
 // console.log(secondLargest([8, 4, 5, 6]));
 
+
 // 30° Exerxício
-let estudantes = {
+let students = {
     joao: [8, 5, 7, 8.5],
     maria: [9, 4, 7, 6],
     francisco: [8, 7.5, 10, 5],
-}
+};
 
-const receberMelhorEstudadente = estudantes => {
-    let maiorNota = 0
-    let melhorAluno
-    for(let chave in estudantes) {
-        let somaNotaAtual = 0
-        estudantes[chave].forEach(nota => {
-            somaNotaAtual+= nota
+const receiveBetterStudent = students => {
+    let highestGrade = 0;
+    let bestStudent;
+
+    for(let key in students) {
+        let sumCurrentGrade = 0;
+
+        students[key].forEach(grade => {
+            sumCurrentGrade+= grade;
         })
-        if(maiorNota < somaNotaAtual) {
-            maiorNota = somaNotaAtual / estudantes[chave].length
-            melhorAluno = chave
+
+        if(highestGrade < sumCurrentGrade) {
+            highestGrade = sumCurrentGrade / students[key].length;
+            bestStudent = key;
         }
     }
 
-    return {nome: melhorAluno, media: maiorNota}
+    return {nome: bestStudent, media: highestGrade};
 }
 
-console.log(receberMelhorEstudadente(estudantes))
+// console.log(receiveBetterStudent(students));
 
 
 
